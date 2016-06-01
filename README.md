@@ -6,5 +6,5 @@ npm install
 bower install
 node server.js
 
-// http://localhost
+~ http://localhost
 ```
