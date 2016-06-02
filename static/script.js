@@ -2,11 +2,14 @@ $(function() {
     var UserModel = Backbone.Model.extend({
         "urlRoot": "/users",
         "id": "id",
-        "defaults": {
-            "id": md5(new Date()),
-            "name": "Name",
-            "age": 18,
-            "email": "example@example.example"
+        "defaults": function() {
+            // generate a random number and convert it to base 36
+            return {
+                "id": md5(Math.random().toString(36).substr(2)),
+                "name": "Name",
+                "age": 18,
+                "email": "example@example.example"
+            };
         }
     });
 
